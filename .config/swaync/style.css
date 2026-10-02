@@ -1,0 +1,12 @@
+* { font-family: "CaskaydiaCove Nerd Font"; font-size: 12px; }
+.control-center { background: rgba(26, 27, 38, 0.97); border: 1px solid #3b4261; border-radius: 14px; color: #a9b1d6; padding: 6px; }
+.widget-title { color: #7dcfff; font-size: 13px; font-weight: bold; padding: 4px 8px; }
+.widget-dnd label { color: #a9b1d6; }
+.widget-dnd switch { background: #292e42; border-radius: 8px; }
+.widget-dnd switch:checked { background: #7aa2f7; }
+.notification { background: #24283b; border: 1px solid #3b4261; border-radius: 10px; margin: 3px 5px; padding: 8px; }
+.notification:hover { background: #292e42; }
+.notification-label { color: #7dcfff; font-weight: bold; }
+.notification-body { color: #a9b1d6; }
+.close-button { background: #f7768e; border-radius: 6px; margin: 4px; }
+.blank { min-height: 0; }

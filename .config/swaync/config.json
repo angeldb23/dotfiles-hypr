@@ -1,0 +1,17 @@
+{
+  "timeout": 1,
+  "timeout-low": 1,
+  "timeout-critical": 2,
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-positionX": "right",
+  "control-center-positionY": "top",
+  "control-center-width": 340,
+  "control-center-height": 420,
+  "control-center-margin-top": 40,
+  "control-center-margin-right": 6,
+  "notification-window-width": 320,
+  "fit-to-screen": false,
+  "hide-on-clear": false,
+  "widgets": ["title", "dnd", "notifications"]
+}

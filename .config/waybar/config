@@ -1,0 +1,133 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 6,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "tray",
+        "network",
+        "group/vol",
+        "group/luz",
+        "battery",
+        "custom/notify",
+        "clock",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "on-click": "activate"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 40
+    },
+    "tray": {
+        "spacing": 8
+    },
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  cable",
+        "format-disconnected": "  disconnected",
+        "tooltip-format": "{essid} — click to change network",
+        "on-click": "$HOME/scripts/wifi-menu.sh"
+    },
+    "pulseaudio": {
+        "on-click-right": "pavucontrol",
+        "format": "{icon}  {volume}%",
+        "format-muted": "  muted",
+        "format-icons": {
+            "headphone": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "$HOME/scripts/volume-popup.py"
+    },
+    "backlight": {
+        "format": "  {percent}%",
+        "on-click": "$HOME/scripts/brightness-slider.py",
+        "tooltip-format": "Brightness: {percent}% — click to adjust"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-full": "  {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "clock": {
+        "format": "  {:%a %d  %H:%M}",
+        "tooltip-format": "<big>{:%A, %B %d, %Y}</big>\nclick for calendar",
+        "on-click": "$HOME/scripts/cal-popup.py"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "$HOME/scripts/power-menu.sh"
+    },
+    "custom/notify": {
+        "format": "{icon}",
+        "format-icons": {
+            "none": "",
+            "dnd-none": "",
+            "notification": "",
+            "dnd-notification": "",
+            "default": ""
+        },
+        "exec": "swaync-client -swb 2>/dev/null || echo none",
+        "on-click": "swaync-client -t",
+        "tooltip-format": "Notification center (click to open)"
+    },
+    "margin-top": 3,
+    "margin-left": 8,
+    "margin-right": 8,
+    "group/vol": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
+    "group/luz": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ]
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    }
+}
