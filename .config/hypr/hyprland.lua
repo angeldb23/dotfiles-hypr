@@ -137,6 +137,7 @@ hl.config({
         follow_mouse = 1,
         sensitivity = 0,
         touchpad = {
+            disable_while_typing = false,
             natural_scroll = false,
         },
     },
@@ -360,7 +361,7 @@ hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.move({ direction = "down" }
 
 ---- TECLADO DE LA LAPTOP DESHABILITADO ----
 -- hl.device({ name = "tpd1019:00-093a:0255-touchpad", touchpad = { disable_while_typing = false } })
--- hl.device({ name = "at-translated-set-2-keyboard", enabled = false })
+hl.device({ name = "at-translated-set-2-keyboard", enabled = false })
 
 ---- THEME SELECTOR ----
 hl.window_rule({ name = "themes-float", match = { title = "^Themes$" }, float = true, center = true, rounding = 14 })
