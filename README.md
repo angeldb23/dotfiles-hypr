@@ -69,7 +69,6 @@ chsh -s "$(command -v zsh)"
 
 ## Notes
 
-- A few files contain absolute paths to `/home/angel`. If your username is different, find them with `grep -rl /home/angel ~/.config ~/scripts` and edit them.
 - Wallpapers and icon themes are not included.
 - The package lists were generated with `pacman -Qqen` and `pacman -Qqem`.
 

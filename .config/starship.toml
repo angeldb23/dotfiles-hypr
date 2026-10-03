@@ -20,16 +20,16 @@ $cmd_duration \
 $character"""
 
 [palettes.theme]
-t_text = "#2d353b"
-t_user = "#e67e80"
-t_dir  = "#a7c080"
-t_git  = "#dbbc7f"
-t_lang = "#a7c080"
-t_tip  = "#7fbbb3"
-t_time = "#d3c6aa"
-t_ok   = "#a7c080"
-t_err  = "#e67e80"
-t_dim  = "#859289"
+t_text = "#1d2021"
+t_user = "#c34043"
+t_dir  = "#d79921"
+t_git  = "#e9b45b"
+t_lang = "#a9b21c"
+t_tip  = "#3d8a9e"
+t_time = "#d4be98"
+t_ok   = "#a9b21c"
+t_err  = "#c34043"
+t_dim  = "#a89984"
 
 [os]
 disabled = true

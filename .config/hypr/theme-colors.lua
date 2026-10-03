@@ -1,1 +1,1 @@
-return { active = "rgba(a7c080ff)", inactive = "rgba(3d484dff)" }
+return { active = "rgba(d79921ff)", inactive = "rgba(3c3836ff)" }

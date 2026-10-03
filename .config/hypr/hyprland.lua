@@ -300,7 +300,7 @@ local function showDesktop()
     end
 end
 
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("/home/angel/scripts/show-desktop.sh"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(os.getenv("HOME") .. "/scripts/show-desktop.sh"))
 
 ---- CAPTURAS DE PANTALLA ----
 hl.bind("PRINT",         hl.dsp.exec_cmd(os.getenv("HOME") .. "/scripts/screenshot.sh"))
