@@ -79,3 +79,16 @@ chsh -s "$(command -v zsh)"
 ```bash
 ./sync.sh && git add -A && git commit -m "update" && git push
 ```
+## Warning: built-in laptop keyboard is disabled
+
+`.config/hypr/hyprland.lua` turns off the laptop's internal keyboard, because I use an external USB keyboard:
+
+    hl.device({ name = "at-translated-set-2-keyboard", enabled = false })
+
+If you clone this on another machine, **comment out that line (add `--` at the start) before applying the config**, or you may be left without a working keyboard. The device name may also differ on your hardware; check it with:
+
+    hyprctl devices -j | jq -r '.keyboards[].name'
+
+The config also sets `disable_while_typing = false` inside the `touchpad` block. Without it, the touchpad stopped responding while the internal keyboard was disabled.
+
+If you get locked out, switch to a TTY with `Ctrl+Alt+F3` and edit the file from there.
