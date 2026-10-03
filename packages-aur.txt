@@ -1,0 +1,4 @@
+google-chrome
+ttf-apple-emoji
+yay
+yay-debug

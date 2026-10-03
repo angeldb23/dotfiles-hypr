@@ -1,28 +1,28 @@
 * { font-family: "CaskaydiaCove Nerd Font"; font-size: 13px; min-height: 0; }
-window#waybar { background: transparent; border: none; color: #a9b1d6; }
+window#waybar { background: transparent; border: none; color: #d3c6aa; }
 button { border: none; }
-tooltip { background: rgba(26, 27, 38, 0.95); border: 1px solid rgba(122, 162, 247, 0.35); border-radius: 12px; }
-tooltip label { color: #a9b1d6; }
-#workspaces, #tray, #network, #pulseaudio, #backlight, #battery, #clock, #custom-notify, #custom-power { margin: 3px 0; padding: 2px 14px; border-radius: 20px; background: rgba(36, 40, 59, 0.8); border: 1px solid rgba(122, 162, 247, 0.15); color: #a9b1d6; transition: background 0.2s ease; }
+tooltip { background: rgba(45, 53, 59, 0.95); border: 1px solid rgba(167, 192, 128, 0.35); border-radius: 12px; }
+tooltip label { color: #d3c6aa; }
+#workspaces, #tray, #network, #pulseaudio, #backlight, #battery, #clock, #custom-notify, #custom-power { margin: 3px 0; padding: 2px 14px; border-radius: 20px; background: rgba(52, 63, 68, 0.8); border: 1px solid rgba(167, 192, 128, 0.15); color: #d3c6aa; transition: background 0.2s ease; }
 #workspaces { padding: 0 4px; }
-#workspaces button { margin: 2px 1px; padding: 2px 10px; border-radius: 14px; color: #565f89; transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); }
-#workspaces button:hover { background: rgba(122, 162, 247, 0.25); color: #c0caf5; }
-#workspaces button.active, #workspaces button.focused { background: #7aa2f7; color: #1a1b26; font-weight: bold; padding: 2px 16px; }
-#workspaces button.urgent { background: #f7768e; color: #c0caf5; }
-#network:hover, #pulseaudio:hover, #backlight:hover, #battery:hover, #clock:hover, #custom-notify:hover { background: #292e42; }
-#network.disconnected { color: #f7768e; }
-#pulseaudio.muted { color: #f7768e; }
-#battery.warning { color: #ff9e64; }
-#battery.critical { color: #f7768e; }
-#clock { color: #7dcfff; font-weight: bold; }
-#custom-notify { color: #7dcfff; }
-#custom-power { color: #f7768e; }
-#custom-power:hover { background: rgba(247, 118, 142, 0.35); color: #c0caf5; }
-#vol, #luz { margin: 3px 0; padding: 0 14px; border-radius: 20px; background: rgba(36, 40, 59, 0.8); border: 1px solid rgba(122, 162, 247, 0.15); transition: background 0.2s ease; }
-#vol:hover, #luz:hover { background: #292e42; }
+#workspaces button { margin: 2px 1px; padding: 2px 10px; border-radius: 14px; color: #859289; transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); }
+#workspaces button:hover { background: rgba(167, 192, 128, 0.25); color: #e9e0c5; }
+#workspaces button.active, #workspaces button.focused { background: #a7c080; color: #2d353b; font-weight: bold; padding: 2px 16px; }
+#workspaces button.urgent { background: #e67e80; color: #e9e0c5; }
+#network:hover, #pulseaudio:hover, #backlight:hover, #battery:hover, #clock:hover, #custom-notify:hover { background: #3d484d; }
+#network.disconnected { color: #e67e80; }
+#pulseaudio.muted { color: #e67e80; }
+#battery.warning { color: #e69875; }
+#battery.critical { color: #e67e80; }
+#clock { color: #dbbc7f; font-weight: bold; }
+#custom-notify { color: #dbbc7f; }
+#custom-power { color: #e67e80; }
+#custom-power:hover { background: rgba(230, 126, 128, 0.35); color: #e9e0c5; }
+#vol, #luz { margin: 3px 0; padding: 0 14px; border-radius: 20px; background: rgba(52, 63, 68, 0.8); border: 1px solid rgba(167, 192, 128, 0.15); transition: background 0.2s ease; }
+#vol:hover, #luz:hover { background: #3d484d; }
 #vol #pulseaudio, #luz #backlight { margin: 0; padding: 2px 0; background: transparent; border: none; }
 #vol #pulseaudio:hover, #luz #backlight:hover { background: transparent; }
 #pulseaudio-slider, #backlight-slider { margin: 0 0 0 10px; padding: 0; background: transparent; border: none; }
 #pulseaudio-slider slider, #backlight-slider slider { min-width: 0; min-height: 0; opacity: 0; background-image: none; border: none; box-shadow: none; }
-#pulseaudio-slider trough, #backlight-slider trough { min-width: 80px; min-height: 6px; border-radius: 6px; background: rgba(122, 162, 247, 0.25); }
-#pulseaudio-slider highlight, #backlight-slider highlight { min-height: 6px; border-radius: 6px; background: #7aa2f7; }
+#pulseaudio-slider trough, #backlight-slider trough { min-width: 80px; min-height: 6px; border-radius: 6px; background: rgba(167, 192, 128, 0.25); }
+#pulseaudio-slider highlight, #backlight-slider highlight { min-height: 6px; border-radius: 6px; background: #a7c080; }

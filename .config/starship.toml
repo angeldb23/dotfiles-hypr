@@ -1,0 +1,120 @@
+add_newline = true
+palette = "theme"
+format = """
+[\ue0b6](fg:t_user)\
+$os\
+$username\
+[\ue0b0](bg:t_dir fg:t_user)\
+$directory\
+[\ue0b0](fg:t_dir bg:t_git)\
+$git_branch\
+$git_status\
+[\ue0b0](fg:t_git bg:t_lang)\
+$c$rust$golang$nodejs$php$java$kotlin$haskell$python\
+[\ue0b0](fg:t_lang bg:t_tip)\
+$docker_context\
+[\ue0b0](fg:t_tip bg:t_time)\
+$time\
+[\ue0b4](fg:t_time)\
+$cmd_duration \
+$character"""
+
+[palettes.theme]
+t_text = "#2d353b"
+t_user = "#e67e80"
+t_dir  = "#a7c080"
+t_git  = "#dbbc7f"
+t_lang = "#a7c080"
+t_tip  = "#7fbbb3"
+t_time = "#d3c6aa"
+t_ok   = "#a7c080"
+t_err  = "#e67e80"
+t_dim  = "#859289"
+
+[os]
+disabled = true
+
+[username]
+show_always = true
+style_user = "bg:t_user fg:t_text"
+style_root = "bg:t_user fg:t_text"
+format = "[ $user ]($style)"
+
+[directory]
+style = "bg:t_dir fg:t_text"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = "\ue0a0"
+style = "bg:t_git"
+format = "[[ $symbol $branch ](fg:t_text bg:t_git)]($style)"
+
+[git_status]
+style = "bg:t_git"
+format = "[[($all_status$ahead_behind )](fg:t_text bg:t_git)]($style)"
+
+[c]
+symbol = "\ue61e"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[rust]
+symbol = "\ue7a8"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[golang]
+symbol = "\ue627"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[nodejs]
+symbol = "\ue718"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[php]
+symbol = "\ue73d"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[java]
+symbol = "\ue738"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[kotlin]
+symbol = "\ue634"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[haskell]
+symbol = "\ue777"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[python]
+symbol = "\ue73c"
+style = "bg:t_lang"
+format = "[[ $symbol( $version) ](fg:t_text bg:t_lang)]($style)"
+
+[docker_context]
+symbol = "\uf308"
+style = "bg:t_tip"
+format = "[[ $symbol( $context) ](fg:t_text bg:t_tip)]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:t_time"
+format = "[[ \uf017 $time ](fg:t_text bg:t_time)]($style)"
+
+[cmd_duration]
+min_time = 2000
+format = " [took $duration](t_dim)"
+
+[character]
+success_symbol = "[❯](bold t_ok)"
+error_symbol   = "[❯](bold t_err)"

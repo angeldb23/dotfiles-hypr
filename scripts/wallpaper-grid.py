@@ -9,7 +9,7 @@ from gi.repository import Gtk, Gdk, GdkPixbuf, Pango
 
 WALL_DIR  = os.path.expanduser("~/wallpapers")
 THUMB_DIR = os.path.expanduser("~/.cache/wallthumbs")
-STATE     = "/tmp/current_wallpaper.txt"
+STATE     = os.path.expanduser("~/.cache/current_wallpaper.txt")
 os.makedirs(THUMB_DIR, exist_ok=True)
 
 exts = ("*.jpg", "*.jpeg", "*.png", "*.JPG", "*.JPEG", "*.PNG")

@@ -24,7 +24,6 @@ end
 ---- AUTOSTART ----
 -- Authentication agent (so apps can ask for a password) and notifications
 hl.on("hyprland.start", function()
-    hl.exec_cmd("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1")
     hl.exec_cmd("swaync")
     hl.exec_cmd("waybar")
     hl.exec_cmd(os.getenv("HOME") .. "/scripts/wallpaper-init.sh")
@@ -247,8 +246,61 @@ hl.window_rule({
     rounding = 14,
 })
 
----- SHOW DESKTOP + SCRATCHPAD (normalizado) ----
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(os.getenv("HOME") .. "/scripts/show-desktop.sh"))
+---- SHOW DESKTOP ----
+
+local showDesktopWindows = nil
+local showDesktopWorkspace = nil
+
+local function showDesktop()
+    -- Restaurar
+    if showDesktopWindows then
+        for _, address in ipairs(showDesktopWindows) do
+            hl.dispatch(hl.dsp.window.move({
+                workspace = showDesktopWorkspace,
+                window = "address:" .. address,
+                follow = false,
+            }))
+        end
+
+        showDesktopWindows = nil
+        showDesktopWorkspace = nil
+        return
+    end
+
+    -- Guardar workspace actual
+    local workspace = hl.get_active_workspace()
+    if not workspace then
+        return
+    end
+
+    local windows = hl.get_windows()
+    local addresses = {}
+
+    for _, window in pairs(windows) do
+        if window.workspace and window.workspace.id == workspace.id then
+            table.insert(addresses, window.address)
+        end
+    end
+
+    if #addresses == 0 then
+        return
+    end
+
+    showDesktopWindows = addresses
+    showDesktopWorkspace = workspace.name
+
+    -- Esconder las ventanas.
+    -- IMPORTANTE: no hacemos toggle_special().
+    for _, address in ipairs(addresses) do
+        hl.dispatch(hl.dsp.window.move({
+            workspace = "special:desktop",
+            window = "address:" .. address,
+            follow = false,
+        }))
+    end
+end
+
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("/home/angel/scripts/show-desktop.sh"))
 
 ---- CAPTURAS DE PANTALLA ----
 hl.bind("PRINT",         hl.dsp.exec_cmd(os.getenv("HOME") .. "/scripts/screenshot.sh"))
@@ -321,3 +373,12 @@ hl.window_rule({ name = "volume-float", match = { title = "^Volume$" }, float = 
 
 hl.window_rule({ name = "power-float", match = { title = "^Power$" }, float = true, center = true, rounding = 14 })
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(os.getenv("HOME") .. "/scripts/lock.sh"))
+
+-- Show Desktop: que el blur siga la opacidad de la ventana
+hl.config({
+    decoration = {
+        blur = {
+            ignore_opacity = false,
+        },
+    },
+})

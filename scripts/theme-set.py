@@ -90,6 +90,8 @@ def apply(name):
     act = "rgba(%sff)" % v["accent_nh"]; ina = "rgba(%sff)" % v["sel_nh"]
     (H / ".config/hypr/theme-colors.lua").write_text('return { active = "%s", inactive = "%s" }\n' % (act, ina))
     (H / ".cache").mkdir(exist_ok=True); (H / ".cache/theme.txt").write_text(name)
+    run("python3", str(H / "scripts/starship-theme.py"))
+    run("python3", str(H / "scripts/eza-theme.py"))
     run("pkill", "-SIGUSR2", "waybar"); run("swaync-client", "-rs"); run("pkill", "-USR1", "kitty")
     r = run("hyprctl", "eval", 'hl.config({ general = { col = { active_border = "%s", inactive_border = "%s" } } })' % (act, ina))
     run("python3", str(H / "scripts/gtk-apply.py"), name)

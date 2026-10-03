@@ -1,7 +1,7 @@
 #!/bin/bash
 WALL_DIR="$HOME/wallpapers"
 OPT_DIR="$HOME/.cache/wallfull"
-STATE="/tmp/current_wallpaper.txt"
+STATE="$HOME/.cache/current_wallpaper.txt"
 pgrep -x awww-daemon >/dev/null || { setsid awww-daemon >/tmp/awww.log 2>&1 </dev/null & sleep 1; }
 mapfile -t wallpapers < <(find "$WALL_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) | sort)
 [ ${#wallpapers[@]} -eq 0 ] && exit 1
