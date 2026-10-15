@@ -1,0 +1,5 @@
+[Path]
+PathModified=%h/.cache/current_wallpaper.txt
+
+[Install]
+WantedBy=default.target

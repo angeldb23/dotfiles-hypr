@@ -1,0 +1,25 @@
+* { font-family: "SF Pro Display", "CaskaydiaCove Nerd Font"; font-size: 13px; }
+.control-center { background: rgba(18, 20, 13, 0.97); border: 1px solid rgba(112, 152, 78, 0.35); border-radius: 22px; color: #c4c9b4; padding: 14px; }
+.control-center-list { background: transparent; }
+.widget-title { color: #6f964d; font-size: 16px; font-weight: bold; padding: 2px 6px 8px 6px; margin: 0; }
+.widget-title > button { background: rgba(196, 201, 180, 0.10); color: #c4c9b4; border: none; border-radius: 12px; padding: 4px 14px; box-shadow: none; }
+.widget-title > button:hover { background: rgba(112, 152, 78, 0.25); }
+.widget-dnd { padding: 4px 6px 10px 6px; margin: 0; }
+.widget-dnd > label { color: #c4c9b4; }
+.widget-dnd > switch { background: rgba(196, 201, 180, 0.14); border: none; border-radius: 14px; }
+.widget-dnd > switch:checked { background: #70984e; }
+.widget-dnd > switch slider { background: #c4c9b4; border-radius: 14px; }
+.notification-row { background: transparent; outline: none; padding: 0; }
+.notification-group { background: transparent; }
+.notification { background: rgba(196, 201, 180, 0.07); border: none; border-radius: 16px; margin: 4px 0; padding: 10px; box-shadow: none; }
+.notification:hover { background: rgba(112, 152, 78, 0.16); }
+.floating-notifications .notification { background: rgba(18, 20, 13, 0.97); border: 1px solid rgba(112, 152, 78, 0.35); margin: 6px 8px; }
+.summary, .notification-label { color: #6f964d; font-weight: bold; font-size: 14px; }
+.body, .notification-body { color: #c4c9b4; }
+.time { color: rgba(196, 201, 180, 0.6); font-size: 11px; }
+.close-button { background: rgba(196, 201, 180, 0.12); color: #c4c9b4; border: none; border-radius: 12px; min-width: 24px; min-height: 24px; margin: 2px; padding: 0; box-shadow: none; }
+.close-button:hover { background: #ffb4ab; }
+.blank { min-height: 0; }
+/* MODE-START */
+
+/* MODE-END */
